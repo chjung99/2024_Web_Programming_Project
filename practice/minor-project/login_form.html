@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="login_style.css">
+</head>
+<body>
+    <div class="container">
+        <form id="loginForm">
+            <div>
+                <label for="userId">ID:</label>
+                <input type="text" name="userId" id="userId"/>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password"/>
+            </div>
+            <button type="button" onclick="validateLogin()">Login</button>
+            <p id="errorMessage" style = "color: #00ff00;"></p>
+            <p>Don't have an account? <a href="signup_form.html">Sign up</a></p>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                validateLogin();
+            }
+        });
+        
+        function validateLogin() {
+            var userId = document.getElementById("userId").value;
+            var password = document.getElementById("password").value;
+
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == XMLHttpRequest.DONE) {
+                    
+                    if (xhr.status == 200) {
+                        var response = JSON.parse(xhr.responseText);
+                        console.log(response);
+
+                        if (response.success){
+                            document.getElementById("errorMessage").innerText = response.message;
+                            window.location.replace("/practice/minor-project/home.php");
+                        }
+                        else{
+                            document.getElementById("errorMessage").innerText = response.message;
+                        }
+                    } else {
+
+                        document.getElementById("errorMessage").innerText = "Error: " + xhr.status;
+                    }
+                }
+            };
+            xhr.open("POST", "login.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.send("userId=" + userId + "&password=" + password);
+        }
+    </script>
+</body>
+</html>

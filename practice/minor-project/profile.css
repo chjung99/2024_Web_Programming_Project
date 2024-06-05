@@ -1,0 +1,77 @@
+body {
+    background-image: url('/practice/minor-project/background.png');
+    background-size: cover;
+    font-family: 'Press Start 2P', cursive;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 50px;
+}
+.container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2vw;
+    display: inline-block;
+    border: 3px solid #00ff00;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 800px;
+    height: 70vh;
+    margin: 0 auto;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+input[type="text"], input[type="password"], select {
+    background: #000000;
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    color: #00ff00;
+    padding: 10px;
+    width: 100%;
+    font-family: 'Press Start 2P', cursive;
+    margin-bottom: 15px;
+}
+button {
+    background: #ff00ff;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-family: 'Press Start 2P', cursive;
+    cursor: pointer;
+    margin: 10px 0;
+    width: auto;
+}
+button:hover {
+    background: #ff69b4;
+}
+a {
+    color: #00ff00;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+span {
+    font-size: 10vw;
+    display: block;
+    margin-top: 5px;
+}
+.message {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.success {
+    background-color: #4CAF50;
+}
+.error {
+    background-color: #f44336;
+}

@@ -1,0 +1,41 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="share_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script>
+        function getCookie(name) {
+            let cookieArr = document.cookie.split(";");
+            for (let i = 0; i < cookieArr.length; i++) {
+                let cookiePair = cookieArr[i].split("=");
+                if (name === cookiePair[0].trim()) {
+                    return decodeURIComponent(cookiePair[1]);
+                }
+            }
+            return null;
+        }
+
+        function setHighScoreFromCookie() {
+            let highScore = getCookie("highestScore");
+            if (highScore) {
+                document.getElementById("highScoreInput").value = highScore;
+            }
+        }
+
+        window.onload = setHighScoreFromCookie;
+    </script>
+</head>
+<body>
+<div class="container">
+    
+    <form id="shareScoreForm" action="share.php" method="POST">
+        <label for="highScoreInput">High Score</label>
+        <input type="text" name="highScore" id="highScoreInput" readonly>
+        <label for="userText">Your Message</label>
+        <!-- <input type="text" name="userText" id="userText"><br/> -->
+        <textarea name="userText" id="userText"></textarea>
+        <button type="submit" id="shareScoreButton">Share</button>
+    </form>
+    <button id="back" onclick="window.location.href = 'dino.php';">Back</button>
+</div>
+</body>
+</html>

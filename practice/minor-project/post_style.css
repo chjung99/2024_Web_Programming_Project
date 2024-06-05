@@ -1,0 +1,101 @@
+body {
+    background-image: url('/practice/minor-project/background.png');
+    background-size: cover;
+    font-family: 'Press Start 2P', cursive;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 50px;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px; 
+}
+
+.header h1 {
+    margin: 0;
+    
+}
+
+.header button {
+    margin-right: 10px;
+    font-size: 26px;
+
+}
+
+button {
+    background: #ff00ff;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-family: 'Press Start 2P', cursive;
+    cursor: pointer;
+    margin: 10px 0;
+    width: auto;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    display: inline-block;
+    border: 3px solid #00ff00;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.post {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+.post h3 {
+    margin: 0 0 10px;
+    color: #00ff00;
+    font-size: 24px;
+}
+
+.post p {
+    margin: 0 0 10px;
+    line-height: 1.6;
+    color: #00ff00;
+}
+
+.post .meta {
+    color: #ffff00;
+    font-size: 14px;
+}
+
+.post button {
+    background-color: #ff00ff;
+    color: #ffffff;
+    border: 2px solid #ffff00;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.post button.comment {
+    background-color: #00ffff;
+    border-color: #00ffff;
+}
+
+.comment-section {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.comment {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+    color: #ffffff;
+}

@@ -1,0 +1,89 @@
+body {
+    background-image: url('/practice/minor-project/background.png');
+    background-size: cover;
+    font-family: 'Press Start 2P', cursive;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 5vh;
+    font-size: 2vw;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2vw;
+    display: inline-block;
+    border: 3px solid #00ff00;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 800px;
+    height: 70vh;
+    margin: 0 auto;
+}
+
+input[type="text"], input[type="password"], select {
+    background: #000000;
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    color: #00ff00;
+    padding: 1vh;
+    width: 80%;
+    height: 20%;
+    font-family: 'Press Start 2P', cursive;
+    margin-bottom: 1.5vh;
+    font-size: 1.0vw;
+}
+
+button {
+    background: #ff00ff;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    padding: 1vh 2vw;
+    font-family: 'Press Start 2P', cursive;
+    cursor: pointer;
+    margin: 1vh 0;
+    width: 50%;
+    height: 4vh;
+    font-size: 0.9vw;
+}
+
+button:disabled {
+    background: #555555;
+}
+
+button:hover:enabled {
+    background: #ff69b4;
+}
+
+a {
+    color: #00ff00;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+label {
+    display: block;
+    margin-bottom: 1vh;
+    font-size: 0.9vw;
+}
+
+p {
+    display: block;
+    margin-bottom: 1vh;
+    font-size: 0.9vw;
+}
+
+
+span {
+    font-size: 1.2vw;
+    display: block;
+    margin-top: 0.5vh;
+}
+
+#nicknameMsg, #userIdMsg{
+    color: #00ff00;
+    font-size: 0.7vw;
+}

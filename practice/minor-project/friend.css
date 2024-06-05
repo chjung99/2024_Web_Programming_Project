@@ -1,0 +1,101 @@
+body {
+    background-image: url('/practice/minor-project/background.png');
+    background-size: cover;
+    font-family: 'Press Start 2P', cursive; 
+    color: #ffffff;
+    text-align: center;
+    padding-top: 50px;
+}
+.container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2vw;
+    display: inline-block;
+    border: 3px solid #00ff00;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 800px;
+    height: 70vh;
+    margin: 0 auto;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h2 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+th {
+    border: 1px solid #fff;
+    text-align: left;
+    padding: 8px;
+    color: #000;
+}
+
+td {
+    border: 1px solid #fff;
+    text-align: left;
+    padding: 8px;
+    color: #fff;
+}
+
+
+th {
+    background-color: #0a0a2a;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    color: #fff;
+}
+
+input[type="text"], input[type="submit"], button {
+    background-color: #000;
+    color: #ffd700;
+    border: none;
+    padding: 8px 12px;
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input[type="text"] {
+    width: 200px;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #ffd700;
+    color: #000;
+}
+
+button {
+    background: #ff00ff;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-family: 'Press Start 2P', cursive;
+    cursor: pointer;
+    margin: 10px 0;
+    width: auto;
+}
+button:hover {
+    background: #ff69b4;
+}
+.friend-button {
+    margin-left: 10px;
+}

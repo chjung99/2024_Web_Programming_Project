@@ -1,0 +1,113 @@
+body {
+    background-image: url('/practice/minor-project/background.png');
+    background-size: cover;
+    font-family: 'Press Start 2P', cursive;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 50px;
+}
+.container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2vw;
+    display: inline-block;
+    border: 3px solid #00ff00;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 800px; 
+    height: 40vh; 
+    margin: 0 auto;
+}
+/* .container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    display: inline-block;
+    border: 3px solid #00ff00;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+} */
+input[type="text"] {
+    background: #000000;
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    color: #00ff00;
+    padding: 10px;
+    width: 80%;
+    font-family: 'Press Start 2P', cursive;
+    margin-bottom: 15px;
+}
+input[id="highScoreInput"]{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5vw;
+    text-align: center;
+}
+
+textarea {
+    background: #000000;
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    color: #00ff00;
+    padding: 10px;
+    width: 80%;
+    font-family: 'Press Start 2P', cursive;
+    margin-bottom: 15px;
+    font-size: 1.0vw;
+
+    height: 20vh;
+    resize: vertical; /* 사용자가 크기를 조절할 수 있는 방향을 지정합니다. */
+}
+
+/* input[id="userText"]{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7vw;
+} */
+
+button {
+    background: #ff00ff;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    padding: 0px 0px;
+    font-family: 'Press Start 2P', cursive;
+    cursor: pointer;
+    margin: 1px 0;
+    width: 40%;
+    height: 5vh;
+    font-size: 1.0vw;
+}
+
+button:disabled {
+    background: #555555;
+}
+
+button:hover:enabled {
+    background: #ff69b4;
+}
+
+a {
+    color: #00ff00;
+    text-decoration: none;
+}
+p {
+    
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5vw;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 1vh;
+    font-size: 1.5vw;
+}
+
+span {
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+}

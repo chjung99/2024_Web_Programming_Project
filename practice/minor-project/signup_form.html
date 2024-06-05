@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="signup.css">
+    <script>
+        function checkNicknameAvailability() {
+            var nickname = document.getElementById("nickname").value;
+
+            if (nickname === "") {
+                document.getElementById("nicknameMsg").innerHTML = "";
+                enableSignupButton();
+                return;
+            }
+
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == XMLHttpRequest.DONE) {
+                    if (xhr.status == 200) {
+                        var response = xhr.responseText;
+                        if (response == "available") {
+                            document.getElementById("nicknameMsg").innerHTML = "Nickname is available.";
+                        } else {
+                            document.getElementById("nicknameMsg").innerHTML = "Nickname is already taken.";
+                        }
+                    } else {
+                        document.getElementById("nicknameMsg").innerHTML = "Server error. Please try again.";
+                    }
+                    enableSignupButton();
+                }
+            };
+            xhr.open("POST", "nickname_check.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.send("nickname=" + nickname);
+        }
+
+        function checkUserIdAvailability() {
+            var userId = document.getElementById("userId").value;
+
+            if (userId === "") {
+                document.getElementById("userIdMsg").innerHTML = "";
+                enableSignupButton();
+                return;
+            }
+
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == XMLHttpRequest.DONE) {
+                    if (xhr.status == 200) {
+                        var response = xhr.responseText;
+                        if (response == "available") {
+                            document.getElementById("userIdMsg").innerHTML = "ID is available.";
+                        } else {
+                            document.getElementById("userIdMsg").innerHTML = "ID is already taken.";
+                        }
+                    } else {
+                        document.getElementById("userIdMsg").innerHTML = "Server error. Please try again.";
+                    }
+                    enableSignupButton();
+                }
+            };
+            xhr.open("POST", "userid_check.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.send("userId=" + userId);
+        }
+
+        function enableSignupButton() {
+            var nicknameMsg = document.getElementById("nicknameMsg").innerHTML;
+            var userIdMsg = document.getElementById("userIdMsg").innerHTML;
+
+            if (nicknameMsg === "Nickname is available." && userIdMsg === "ID is available.") {
+                document.getElementById("signupBtn").disabled = false;
+            } else {
+                document.getElementById("signupBtn").disabled = true;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <form action="signup.php" method="post">
+            <div>
+                <label for="nickname">Nickname:</label>
+                <input type="text" name="nickname" id="nickname" oninput="checkNicknameAvailability(); enableSignupButton();" />
+                <span id="nicknameMsg"></span>
+            </div>
+            <div>
+                <label for="gender"><br />Gender:</label>
+                <select name="gender" id="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <div>
+                <label for="city"><br />City:</label>
+                <select name="city" id="city">
+                    <option value="Seoul">Seoul</option>
+                    <option value="Busan">Busan</option>
+                    <option value="Incheon">Incheon</option>
+                    <option value="Daegu">Daegu</option>
+                    <option value="Daejeon">Daejeon</option>
+                    <option value="Gwangju">Gwangju</option>
+                </select>
+            </div>
+            <div>
+                <label for="userId"><br />ID:</label>
+                <input type="text" name="userId" id="userId" oninput="checkUserIdAvailability(); enableSignupButton();" /><br/>
+                <span id="userIdMsg"></span>
+            </div>
+            <div>
+                <label for="password"><br />Password:</label>
+                <input type="password" name="password" id="password">
+            </div>
+            <button type="submit" id="signupBtn" disabled>Signup</button>
+
+            <p>Have an account? <a href="login_form.html">Log in</a></p>
+        </form>
+    </div>
+</body>
+</html>
